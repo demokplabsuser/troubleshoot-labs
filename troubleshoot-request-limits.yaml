@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: troubleshoot-scenerio-2-pod
+spec:
+  containers:
+  - name: app
+    image: nginx
+    resources:
+      requests:
+        memory: "2048Mi"
+        cpu: "2500m"
+      limits:
+        memory: "4096Mi"
+        cpu: "5000m"
+  hostNetwork: true
+  dnsPolicy: ClusterFirstWithHostNet
+  terminationGracePeriodSeconds: 100
