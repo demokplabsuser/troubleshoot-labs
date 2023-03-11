@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  creationTimestamp: null
+  name: staging-env
+spec: {}
+status: {}
+
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  namespace: staging-env
+  labels:
+    run: troubleshoot-pod
+  name: troubleshoot-pod
+spec:
+  containers:
+  - image: ninx
+    name: nginx
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}
